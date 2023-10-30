@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Beebe GPT2 Intellectual Property assistant</title>
-    <!-- Load the Bootstrap CSS file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Load custom CSS file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
 </head>
 <body>
     <!-- Create a container for your web UI elements -->
@@ -24,8 +22,8 @@
         <div id="container">
             <h1>Beebe chat</h1>
             <div id="chatbox"></div>
-            <input id="input" type="text" placeholder="Type your message here...">
-            <button id="send" onclick="sendMessage()">Send</button>
+            <input class="box" id="input" type="text" placeholder="Type your message here...">
+            <button class="send" id="send" onclick="sendMessage()">Send</button>
         </div>
     </main>
    <br><br>
@@ -34,13 +32,13 @@
         <nav class="bottom-nav" role="menu">
             <section class="bottom-nav-1">        
                 <a href="https://www.youtube.com/watch?v=L-4dO-Ogm0k" role="link" title="watch-the-demo">Demo</a>
-                <a href="https://github.com/dottymatrix/weba11y" role="link" title="read-github-documentation">Github</a>
+                <a href="https://github.com/dottymatrix/beebe" role="link" title="read-github-documentation">Github</a>
             </section>
             <section class="bottom-nav-2">
                 <p>
                     <ul role="list">
                         <li role="listitem"> <a href="/about" role="link"  title="about-us">About</a>
-                        <li role="listitem"> <a href="/copyright" role="link"  title="apache-2.0-license-document">Copyright</a>
+                        <li role="listitem"> <a href="/copyright" role="link"  title="MIT-license">Copyright</a>
                         <li role="listitem"> <a href="/feedback" role="link"  title="send-feedback">Send feedback</a>
                         <li role="listitem"> <a href="/terms" role="link"  title="terms-of-service">Terms</a>
                     </ul>
@@ -52,6 +50,6 @@
         
     </footer>
     <!-- Load custom JavaScript file -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src='js/script.js'></script>
 </body>
 </html>

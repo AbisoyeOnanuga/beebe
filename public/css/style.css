@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-size: 18px; /* or any other value */
+    font-family: Arial, sans-serif; /* or any other font */
+    font-weight: bold; /* or normal */
+    color: black; /* or any other color */
+    background-color: white; /* or any other color */
+}
+
+.text {
+    color: black; /* or any other color */
+    background-color: white; /* or any other color */
+}
+  
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+}
+
+#chatbox {
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+#input {
+    width: 80%;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#send {
+    width: 15%;
+    height: 40px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.user {
+    color: blue;
+    font-weight: bold;
+}
+
+.bot {
+    color: green;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 10px; /* or 10% */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* or any other values */
+}
+
+/* Add some margin to the page */
+body {
+    margin: 20px;
+}
+
+/* Center the container div */
+#container {
+    margin: 0 auto;
+}
+
+/* Style the lists without bullet points */
+ul {
+    list-style: none;
+}
+
+/* Style the nav to horizontal */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the nav links */
+nav a {
+    color: blue;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Style the nav links on hover */
+nav a:hover {
+    color: white;
+    background-color: blue;
+}
+
+/* Choose accessible contrast colors for hover, links, boxes, etc. */
+/* You can use tools like Color Contrast Checker or WebAIM Contrast Checker to check the contrast ratio */
+/* For example, blue and white have a contrast ratio of 8.59:1, which meets the WCAG AAA standard */
+
+/* Style the chatbot messages with border radius and box shadow */
+.chatbot-message {
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Differ the user input from the chatbot response with different background colors */
+.user-text {
+    background-color: #f0f0f0;
+}
+
+.bot-text {
+    background-color: #e0e0e0;
+}
+
+/* Make the text bigger and more legible with font size, font family, and font weight */
+.text {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Style the boxes with border styles */
+.chatbox {
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* Style the send button on hover */
+.send:hover {
+    background-color: white;
+    color: blue;
+}
+
+/* Style the boxes with border radius and box shadow */
+.box {
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+#chatbox:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+}
+  
+#send:hover {
+    background-color: white;
+    color: blue;
+    border-color: blue;
+}
+  

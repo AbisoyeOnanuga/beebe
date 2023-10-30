@@ -1,9 +1,17 @@
 # Import the necessary modules
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Create a Flask app
-app = Flask(__name__, static_folder="public")
+app = Flask(__name__, template_folder="public")
+
+TEMPLATES_AUTO_RELOAD = True
+
+# Define a route for rendering the index.html file
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 # Load the pre-trained model and tokenizer from the repository
 model = GPT2LMHeadModel.from_pretrained("D://documents/vscode/gpt2")
