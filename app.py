@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Create a Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder="public")
 
 # Load the pre-trained model and tokenizer from the repository
 model = GPT2LMHeadModel.from_pretrained("D://documents/vscode/gpt2")

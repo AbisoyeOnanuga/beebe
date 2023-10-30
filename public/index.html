@@ -6,7 +6,7 @@
     <!-- Load the Bootstrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Load custom CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <!-- Create a container for your web UI elements -->
@@ -52,6 +52,6 @@
         
     </footer>
     <!-- Load custom JavaScript file -->
-    <script src="app.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
