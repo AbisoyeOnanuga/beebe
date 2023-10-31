@@ -39,8 +39,9 @@ body {
 
 #send {
     width: 15%;
-    height: 40px;
+    height: 50px;
     border: none;
+    border-radius: 10px;
     background-color: blue;
     color: white;
     font-weight: bold;

@@ -1,5 +1,7 @@
 // Define the function for sending user input to the backend service and receiving model output as a response
-async function sendMessage() {
+async function sendMessage(e) {
+  // Prevent default behaviour of submit event
+  e.preventDefault();
   // Get the user input from the input field
   let userInput = document.getElementById("input-field").value;
   // Clear the input field
