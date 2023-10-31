@@ -1,5 +1,5 @@
 Flask==3.0.0
-Flask_Cors==4.0.0
-gpt2==0.0.4
+Flask-Cors==4.0.0
 torch==2.1.0
 transformers==4.34.0
+tokenizers==0.14.1
