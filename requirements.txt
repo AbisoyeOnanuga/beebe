@@ -1,5 +1,5 @@
-Flask==2.0.1
-gunicorn==20.1.0
-transformers==4.9.2
-torch==1.9.0+cpu
-tensorflow=>2.0
+Flask==3.0.0
+Flask_Cors==4.0.0
+gpt2==0.0.4
+torch==2.1.0
+transformers==4.34.0
