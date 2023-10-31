@@ -19,7 +19,7 @@ def index():
 
 # Load the GPT-2 model and tokenizer from the local folder
 model_path = os.path.join(os.getcwd(), "output-gpt2")
-tokenizer_path = os.path.join(os.getcwd(), "gpt2")
+tokenizer_path = os.path.join(os.getcwd(), "output-gpt2")
 model = GPT2LMHeadModel.from_pretrained(model_path)
 tokenizer = GPT2Tokenizer.from_pretrained(tokenizer_path)
 
