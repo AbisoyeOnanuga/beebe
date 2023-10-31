@@ -6,10 +6,8 @@ async function sendMessage(e) {
   let userInput = document.getElementById("input-field").value;
   // Clear the input field
   document.getElementById("input-field").value = "";
-  // Display the user input in the conversation div
-  const conversation = document.getElementById("chatbox");
-  conversation.insertAdjacentHTML("beforeend", `<div class="chatbot-message"><p class="user-text">${userInput}</p></div>`);
-  // Scroll to the bottom of the conversation div
+  // Display the user input in the conversation div using innerHTML
+  chatbox.insertAdjacentHTML("beforeend", `<div class="user-message">${userInput}</div>`);  // Scroll to the bottom of the conversation div
   conversation.scrollTop = conversation.scrollHeight;
   
   // Send a POST request to the backend service with the user input as a JSON body
@@ -41,25 +39,20 @@ async function sendMessage(e) {
   }
 }
 
-function displayMessage() {
+function displayMessage(chatbotOutput) {
   // Get the chatbox element by its id
   let chatbox = document.getElementById("chatbox");
   // Get the user input from the input field
   let userInput = document.getElementById("input-field").value;
   // Display the user input in the chatbox element using innerHTML
-  chatbox.innerHTML += `<div class="user-message">${userInput}</div>`;
-  // Call the sendMessage function and wait for its promise to resolve
-  sendMessage().then(chatbotOutput => {
-    // Display the chatbot output in the chatbox element using innerHTML
-    chatbox.innerHTML += `<div class="chatbot-message">${chatbotOutput}</div>`;
-  });
+  chatbox.insertAdjacentHTML("beforeend", `<div class="user-message">${userInput}</div>`);
+  // Display the chatbot output in the chatbox element using innerHTML
+  chatbox.insertAdjacentHTML("beforeend", `<div class="chatbot-message">${chatbotOutput}</div>`);
 }
 
 
 // Add an event listener for the send button
-document.getElementById("send").addEventListener("click", sendMessage),
-() => {
-  // call both functions
-  sendMessage();
+document.getElementById("send").addEventListener("click", sendMessage)
+{
   displayMessage();
 }

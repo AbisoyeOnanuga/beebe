@@ -1,12 +1,53 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(54, 113, 181);
+  font-weight: 600;
+  margin-left: 8%;
+}
+
+.box h1 {
+    padding-top: 3%;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    font-size: 18px; /* or any other value */
+    font-size: large; /* or any other value */
     font-family: Arial, sans-serif; /* or any other font */
-    font-weight: bold; /* or normal */
+    font-weight: normal; /* or normal */
     color: black; /* or any other color */
     background-color: white; /* or any other color */
     margin: 5% auto;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    height: 50px;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    height: 100px;
+}
+
+.bottom-nav-1 {
+    display: flex;
+    margin-left: 20px;
+}
+
+.bottom-nav-2 {
+    display: flex;
+    margin-right: 20px;
 }
 
 .text {
@@ -45,7 +86,8 @@ body {
     border-radius: 10px;
     background-color: blue;
     color: white;
-    font-weight: bold;
+    font-size: large;
+    font-weight: normal;
 }
 
 #send:hover {
@@ -61,16 +103,18 @@ body {
 
 .user {
     color: blue;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .bot {
     color: green;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 input {
     border-radius: 10px; /* or 10% */
+    border-style: solid;
+    border-color: lightslategray;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* or any other values */
     width: 60%;
     height: 50px;
@@ -125,15 +169,19 @@ nav a:hover {
 /* Differ the user input from the chatbot response with different background colors */
 .user-text {
     background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .bot-text {
     background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Make the text bigger and more legible with font size, font family, and font weight */
 .text {
-    font-size: 18px;
+    font-size: large;
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
@@ -154,6 +202,9 @@ nav a:hover {
 
 /* Style the boxes with border radius and box shadow */
 .box {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightslategray;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
@@ -166,10 +217,11 @@ nav a:hover {
 
 .user-message {
     color: white;
-    background-color: blue;
+    background-color: lightgray;
     font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+    font-weight: normal;
     text-align: right;
     width: fit-content;
     height: fit-content;
@@ -179,13 +231,17 @@ nav a:hover {
     padding: 5px;
     justify-self: right;
     display: flex;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
   
 .chatbot-message {
     color: black;
     background-color: lightgray;
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: large;
+    text-align: left;
+    padding: 10px;
     font-weight: normal;
     width: fit-content;
     height: fit-content;
@@ -194,6 +250,8 @@ nav a:hover {
     margin-top: 10px;
     padding: 5px;
     justify-content: left;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .user-message::before {
@@ -201,7 +259,7 @@ nav a:hover {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-image: url("https://www.flaticon.com/free-icons/chat-bot");
+    background-image: url("https://cdn-icons-png.flaticon.com/128/3177/3177440.png");
     background-size: cover;
     width: fit-content;
     border-radius: 50%;
@@ -214,7 +272,7 @@ nav a:hover {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-image: url("https://www.flaticon.com/free-icon/chat-bot_11773650");
+    background-image: url("https://cdn-icons-png.flaticon.com/128/11773/11773650.png");
     background-size: cover;
     border-radius: 50%;
     margin-right: 10px;
