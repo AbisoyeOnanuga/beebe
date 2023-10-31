@@ -1,13 +1,13 @@
 // Define the function for sending user input to the backend service and receiving model output as a response
 async function sendMessage(e) {
-  // Prevent default behaviour of submit event
+  // Prevent default behaviour of send event
   e.preventDefault();
   // Get the user input from the input field
   let userInput = document.getElementById("input-field").value;
   // Clear the input field
   document.getElementById("input-field").value = "";
   // Display the user input in the conversation div
-  const conversation = document.getElementById("conversation");
+  const conversation = document.getElementById("chatbox");
   conversation.insertAdjacentHTML("beforeend", `<div class="chatbot-message"><p class="user-text">${userInput}</p></div>`);
   // Scroll to the bottom of the conversation div
   conversation.scrollTop = conversation.scrollHeight;
@@ -27,22 +27,34 @@ async function sendMessage(e) {
       let data = await response.json();
       
       // Get the model output from the JSON object
-      let modelOutput = data["model_output"];
-      
-      // Display the model output in the conversation div using insertAdjacentHTML
-      conversation.insertAdjacentHTML("beforeend", `<div class="chatbot-message"><p class="bot-text">${modelOutput}</p></div>`);
-      
-       // Scroll to the bottom of the conversation div
-       conversation.scrollTop = conversation.scrollHeight; 
+      let chatbotOutput = data["model_output"];
+
+      // Return the chatbot output as a promise
+      return chatbotOutput;
     } else {
-      // Display an error message in the conversation div
-      conversation.insertAdjacentHTML("beforeend", `<div class="chatbot-message"><p class="bot-text">Sorry, something went wrong. Please try again later.</p></div>`);
+      // Throw an error if the response is not ok
+      throw new Error("Something went wrong");
     }
   } catch (error) {
-    // Display an error message in the console
+    // Log the error in the console
     console.error(error);
   }
 }
 
-// Add an event listener for the submit button
-document.getElementById("submit-button").addEventListener("click", sendMessage);
+function displayMessage() {
+  // Get the chatbox element by its id
+  let chatbox = document.getElementById("chatbox");
+  // Get the user input from the input field
+  let userInput = document.getElementById("input-field").value;
+  // Display the user input in the chatbox element using innerHTML
+  chatbox.innerHTML += `<div class="user-message">${userInput}</div>`;
+  // Call the sendMessage function and wait for its promise to resolve
+  sendMessage().then(chatbotOutput => {
+    // Display the chatbot output in the chatbox element using innerHTML
+    chatbox.innerHTML += `<div class="chatbot-message">${chatbotOutput}</div>`;
+  });
+}
+
+
+// Add an event listener for the send button
+document.getElementById("send").addEventListener("click", sendMessage);
