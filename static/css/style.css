@@ -14,13 +14,12 @@ h6 {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f0f0f0;
     font-size: large; /* or any other value */
     font-family: Arial, sans-serif; /* or any other font */
     font-weight: normal; /* or normal */
     color: black; /* or any other color */
-    background-color: white; /* or any other color */
     margin: 5% auto;
 }
 
@@ -67,11 +66,17 @@ body {
 #chatbox {
     height: 400px;
     overflow-y: scroll;
-    border: 1px solid #ccc;
-    background-color: #f8f8f8;
+    border: 1px solid rgb(226, 226, 226);
+    background-color: #d0d0d0;
     padding: 10px;
 }
-
+/*
+#chatbox:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+}
+*/
 #input {
     width: 80%;
     height: 40px;
@@ -97,8 +102,10 @@ body {
     border-width: 3px;
 }
 
-.message {
+/* Style the chat messages with border radius and box shadow */
+#chatbox {
     margin: 10px 0;
+    color: rebeccapurple;
 }
 
 .user {
@@ -203,21 +210,14 @@ nav a:hover {
 /* Style the boxes with border radius and box shadow */
 .box {
     border-style: solid;
-    border-width: 3px;
-    border-color: lightslategray;
+    border: 3px solid #ccc;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-#chatbox:hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
-}
-
 .user-message {
-    color: white;
-    background-color: lightgray;
+    color: orangered;
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     font-size: large;
     padding: 10px;
@@ -232,7 +232,6 @@ nav a:hover {
     justify-self: right;
     display: flex;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
   
 .chatbot-message {
@@ -251,19 +250,22 @@ nav a:hover {
     padding: 5px;
     justify-content: left;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-.user-message::before {
+.user-message::after {
     content: "";
     display: inline-block;
     width: 40px;
     height: 40px;
     background-image: url("https://cdn-icons-png.flaticon.com/128/3177/3177440.png");
     background-size: cover;
-    width: fit-content;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 20px;
+    padding: 10px;
     justify-self: left;
 }
 
@@ -274,10 +276,10 @@ nav a:hover {
     height: 40px;
     background-image: url("https://cdn-icons-png.flaticon.com/128/11773/11773650.png");
     background-size: cover;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff;
     border-radius: 50%;
-    margin-right: 10px;
-}
-  
-.chatbot-message {
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-left: 10px;
+    margin-right: 20px;
 }

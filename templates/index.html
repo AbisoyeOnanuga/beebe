@@ -14,9 +14,9 @@
     <header>
         <h1 class="header-1" title="web-accessibility">Beebe</h1>
         <h2 class="header-2" title="simplified-website-accessiblity-reports">Trademark and Intellectual Property assistant</h2>
-        <p class="code" role="text">For more information, please see the Github</p>
-        <p class="email-contact">for help, contact developer by email<contact class="email"></contact></p>
-        <nav class="top-nav" role="menu">
+        <p class="code">For more information, please see the Github</p>
+        <p class="email-contact">for help, contact developer by <contact class="email">email</contact></p>
+        <nav class="top-nav">
             <a href="https://dottymatrix.github.io/beebe/" role="link" title="new-conversation">New conversation</a> 
         </nav><br><br>
     </header>
@@ -24,7 +24,7 @@
         <!-- Add web UI elements here, such as forms, buttons, tables, etc. -->
         <form id="conversation" class="box">
             <h1>Beebe chat</h1>
-            <div id="chatbox"></div>
+            <div class="message" id="chatbox">{{ model_output | safe }}</div>
             <input name="input-field" id="input-field" type="text" placeholder="Type your message here...">
             <button name="send" type="submit" class="send" id="send" onclick="sendMessage(event)">Send</button>
         </form>
@@ -32,7 +32,7 @@
    <br><br>
 
     <footer>
-        <nav class="bottom-nav" role="menu">
+        <nav class="bottom-nav">
             <section class="bottom-nav-1">        
                 <a href="https://www.youtube.com/watch?v=L-4dO-Ogm0k" role="link" title="watch-the-demo">Demo</a>
                 <a href="https://github.com/dottymatrix/beebe" role="link" title="read-github-documentation">Github</a>
