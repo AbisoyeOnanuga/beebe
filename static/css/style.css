@@ -6,6 +6,7 @@ body {
     font-weight: bold; /* or normal */
     color: black; /* or any other color */
     background-color: white; /* or any other color */
+    margin: 5% auto;
 }
 
 .text {
@@ -45,6 +46,13 @@ body {
     background-color: blue;
     color: white;
     font-weight: bold;
+}
+
+#send:hover {
+    background-color: white;
+    color: blue;
+    border-color: blue;
+    border-width: 3px;
 }
 
 .message {
@@ -155,12 +163,6 @@ nav a:hover {
     border-color: #ccc;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
 }
-  
-#send:hover {
-    background-color: white;
-    color: blue;
-    border-color: blue;
-}
 
 .user-message {
     color: white;
@@ -169,6 +171,14 @@ nav a:hover {
     font-size: 18px;
     font-weight: bold;
     text-align: right;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 10px;
+    margin-left: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    justify-self: right;
+    display: flex;
 }
   
 .chatbot-message {
@@ -177,22 +187,13 @@ nav a:hover {
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: normal;
-}
-  
-.user-message:first-child {
-    border-top-left-radius: 10px;
-}
-  
-.user-message:last-child {
-    border-bottom-right-radius: 10px;
-}
-  
-.chatbot-message:first-child {
-    border-top-right-radius: 10px;
-}
-  
-.chatbot-message:last-child {
-    border-bottom-left-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px;
+    justify-content: left;
 }
 
 .user-message::before {
@@ -200,10 +201,12 @@ nav a:hover {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-image: url("https://www.flaticon.com/free-icon/user_3177440");
+    background-image: url("https://www.flaticon.com/free-icons/chat-bot");
     background-size: cover;
+    width: fit-content;
     border-radius: 50%;
     margin-right: 10px;
+    justify-self: left;
 }
 
 .chatbot-message::before {

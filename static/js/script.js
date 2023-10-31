@@ -57,4 +57,9 @@ function displayMessage() {
 
 
 // Add an event listener for the send button
-document.getElementById("send").addEventListener("click", sendMessage);
+document.getElementById("send").addEventListener("click", sendMessage),
+() => {
+  // call both functions
+  sendMessage();
+  displayMessage();
+}
