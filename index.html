@@ -24,7 +24,7 @@
         <!-- Add web UI elements here, such as forms, buttons, tables, etc. -->
         <form id="conversation" class="box">
             <h1>Beebe chat</h1>
-            <div class="message" id="chatbox">{{ model_output | safe }}</div>
+            <div class="message" id="chatbox"></div>
             <input name="input-field" id="input-field" type="text" placeholder="Type your message here...">
             <button name="send" type="submit" class="send" id="send" onclick="sendMessage(event)">Send</button>
         </form>
