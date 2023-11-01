@@ -1,0 +1,11 @@
+name = "beebe-chat"
+main = "src/index.ts"
+compatibility_date = "2023-11-01"
+usage_model = "standard"
+env = { }
+
+[triggers]
+crons = [ ]
+
+[ai]
+binding = "AI"
