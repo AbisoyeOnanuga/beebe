@@ -16,6 +16,7 @@ document.getElementById("send").addEventListener("click", async function (e) {
   e.preventDefault();
   // Get the user input from the input field
   let userInput = document.getElementById("input-field").value;
+  let chatbox = document.getElementById("chatbox");
   // Clear the input field
   document.getElementById("input-field").value = "";
 
@@ -63,14 +64,3 @@ function checkChatFull() {
     messageCount = 0;
   }
 }
-
-// Declare a global variable to store the request status
-var isLoading = false;
-
-// Add an event listener for the send button
-document.getElementById("send").addEventListener("click", function(e) {
-  // Call the sendMessage function with the event object
-  sendMessage(e);
-  // Call the checkChatFull function
-  checkChatFull();
-});
