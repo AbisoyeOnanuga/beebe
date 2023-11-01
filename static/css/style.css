@@ -29,6 +29,7 @@ body {
     align-items: center;
     background-color: #f0f0f0;
     height: 50px;
+    gap: 3%;
 }
 
 .bottom-nav {
@@ -37,16 +38,24 @@ body {
     align-items: center;
     background-color: #f0f0f0;
     height: 100px;
+    gap: 3%;
 }
 
 .bottom-nav-1 {
     display: flex;
     margin-left: 20px;
+    gap: 10%;
 }
 
 .bottom-nav-2 {
     display: flex;
     margin-right: 20px;
+    line-height: 180%;
+}
+
+p.copyright {
+    display: flex;
+    justify-content: center;
 }
 
 .text {
