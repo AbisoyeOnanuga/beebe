@@ -1,20 +1,29 @@
-// Get the chatbox element by its id
-let chatbox = document.getElementById("chatbox");
+import { Ai } from "./vendor/@cloudflare/ai.js";
+const ai = new Ai(context.env.AI);
 
-// Define the function for sending user input to the Flask app and receiving model output as a response
-async function sendMessage(e) {
+async function getResponse(messages) {
+  // Use the @cf/meta/llama-2-7b-chat-int8 model to generate chat responses
+  const response = await ai.run("@cf/meta/llama-2-7b-chat-int8", {
+    messages: messages,
+  });
+  // Return the text of the response
+  return response.text;
+}
+
+// Add an event listener for the send button
+document.getElementById("send").addEventListener("click", async function (e) {
   // Prevent default behaviour of send event
   e.preventDefault();
   // Get the user input from the input field
   let userInput = document.getElementById("input-field").value;
   // Clear the input field
   document.getElementById("input-field").value = "";
-  
+
   // Display the user input in the chatbox element using innerHTML
-  chatbox.insertAdjacentHTML("beforeend", `<div class="user-message">${userInput}</div>`);  
+  chatbox.innerHTML += `<div class="user-message">${userInput}</div>`;
   // Scroll to the bottom of the chatbox element
   chatbox.scrollTop = chatbox.scrollHeight;
-  
+
   // Check if there is already a request in progress
   if (isLoading) {
     // If yes, do nothing and return
@@ -22,36 +31,22 @@ async function sendMessage(e) {
   }
   // If no, set the isLoading variable to true
   isLoading = true;
-  
-  // Send a POST request to the Flask app with the user input as a JSON body
-  // Use fetch instead of $.ajax
-  let response = await fetch("http://localhost:8000/generate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ "user_input": userInput }),
-  });
-  
+
+  // Create a messages array with one user message object
+  let messages = [{ role: "user", content: userInput }];
+
+  // Call the getResponse function with the messages array and await for the result
+  let aiResponse = await getResponse(messages);
+
   // Set the isLoading variable back to false
   isLoading = false;
+
+  // Display the chatbot output in the chatbox element using innerHTML
+  chatbox.innerHTML += `<div class="chatbot-message">${aiResponse}</div>`;
   
-  // Check the status of the response
-  if (response.ok) {
-    // Parse the response as a JSON object
-    let data = await response.json();
-    // Get the model output from the JSON object
-    let chatbotOutput = data["model_output"];
-    // Display the chatbot output in the chatbox element using innerHTML
-    chatbox.insertAdjacentHTML("beforeend", `<div class="chatbot-message">${chatbotOutput}</div>`);
-  } else {
-    // Throw an error if the response is not ok
-    throw new Error("Something went wrong");
-  }
-  
-  // Return false to prevent the default action
-  return false;
-}
+  // Call the checkChatFull function
+  checkChatFull();
+});
 
 // Define a variable to store the number of messages in the chatbox
 let messageCount = 0;
@@ -61,7 +56,7 @@ function checkChatFull() {
   // Increment the message count by one
   messageCount++;
   // If the message count reaches 30, clear the chatbox and display a restart message
-  if (messageCount === 30) {
+  if (messageCount === 10) {
     chatbox.innerHTML = "";
     chatbox.insertAdjacentHTML("beforeend", `<div class="restart-message">Chat full, please restart the conversation.</div>`);
     // Reset the message count to zero
